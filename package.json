@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.25.0",
     "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
     "cron": "^1.8.2",
     "express": "^4.17.2",
+    "moment": "^2.29.1",
     "pg": "^8.7.1",
     "request": "^2.88.2",
     "timestamp-conv": "^2.2.0"
