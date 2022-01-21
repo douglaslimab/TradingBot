@@ -65,7 +65,15 @@ form input{
 }
 
 form button{
-    width: 100%;
+    width: 100%;  
+    color: #fff;
+    border: none;
+    background-color: #3a3;  
+}
+
+form button:hover{
+    color: #555;
+    background-color: #5b5;
 }
 .news{
     width: 130vh;
