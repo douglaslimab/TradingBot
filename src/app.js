@@ -34,9 +34,9 @@ sendBtn.addEventListener('click', async () => {
     urlCode = url + inputSymbol.value + '&' + inputInterval.value + '&' + inputRange.value
     console.log(urlCode)  
 
-    while(feedDisplay.firstChild){
-        feedDisplay.removeChild(feedDisplay.firstChild)
-    }
+//    while(feedDisplay.firstChild){
+//        feedDisplay.removeChild(feedDisplay.firstChild)
+//    }
 
     return fetch(urlCode)
         .then((result) => {

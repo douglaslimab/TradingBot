@@ -9,16 +9,27 @@
 </head>
 <body>
     
-    <form action="">
-        <input id="input-symbol" type="text" placeholder="symbol">
-        <input id="input-interval" type="text" placeholder="interval">
-        <input id="input-range" type="text" placeholder="range">
-        <button id="send-btn" type="button">Send</button>
-    </form>
     
-    <div id="feed"></div>
-    <div class="candle-chart">
-        <canvas id="my-chart"></canvas>
+    <div class="main-chart">
+        <div class="display">
+            <div class="candle-chart">
+                <canvas id="my-chart"></canvas>
+            </div>
+            <div id="feed" class="pie-chart">
+                <div>
+                    <canvas></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="input-box">
+            <form action="">
+                <input id="input-symbol" type="text" placeholder="symbol">
+                <input id="input-interval" type="text" placeholder="interval">
+                <input id="input-range" type="text" placeholder="range">
+                <button id="send-btn" type="button">Send</button>
+            </form>
+            <div class="news"></div>
+        </div>
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

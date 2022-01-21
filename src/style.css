@@ -7,15 +7,88 @@
 body{
     margin: 2rem;
 
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    background-color: #555;
+}
+
+.main-chart{
+    width: 100%;
+    height: 100%;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: #77a;
+}
+
+.display{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+form{
+    width: 40vh;
+    height: auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
     background-color: #252525;
 }
 
+form input{
+    width: 100%;
+}
+
+form button{
+    width: 100%;
+}
+.news{
+    width: 130vh;
+}
+
 .candle-chart{
-    width: 100vh;
+    width: 120vh;
+    height: 60vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 10px;
+
+    background-color: #252525;
+}
+
+.pie-chart{
+    width: 50vh;
+    height: 60vh;
+
+    border-radius: 10px;
+
+    background-color: #fff;
 }
