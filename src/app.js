@@ -5,35 +5,32 @@ const inputInterval = document.querySelector('#input-interval')
 const inputRange = document.querySelector('#input-range')
 const sendBtn = document.querySelector('#send-btn')
 
-const labels = [
-    "2018",
-    "2019",
-    "2020",
-    "2021"
-]
+const initialCandlePack = {    x: 0, o: 0, h: 0, l: 0, c: 0 }
 
 const data = {
-    labels,
     datasets: [{
-        data: [1, 3, 5, 8],
-        label: "Chart"
+        label: "",
+        data: [ initialCandlePack ],
     }]
 }
 
-const config ={
-    type: 'line',
+const config = {
+	type: 'candlestick',
     data: data,
-    options:{
-        responsive: true
-    }
+    options:{   responsive: true    }
 }
 
 const myChart = new Chart(ctx, config)
 
+var updateMyChart = function(){
+    var dataset = myChart.config.data.datasets[0].data
+    dataset.push(lastCandlePack)
+    myChart.update()
+}
+
 url = 'http://localhost:8000/b3/ticker/'
 
 sendBtn.addEventListener('click', async () => {
-
     urlCode = url + inputSymbol.value + '&' + inputInterval.value + '&' + inputRange.value
     console.log(urlCode)  
 
@@ -42,22 +39,24 @@ sendBtn.addEventListener('click', async () => {
     }
 
     return fetch(urlCode)
-            .then((result) => {
-                return result.json()
-            }).then((data) => {
-                const output = `<div class='price-row'><p>` + 
-                    data.open[0] + 
-                    `</p><p>` + 
-                    data.high[0] + 
-                    `</p><p>` + 
-                    data.low[0] + 
-                    `</p><p>` + 
-                    data.close[0] +
-                    `</p></div>`
-                feedDisplay.insertAdjacentHTML("beforeend", output)
-                console.log(data)
-            }).catch((err) => {
-                console.log(err)
-            });
+        .then((result) => {
+            return result.json()
+        }).then((data) => {
+            myChart.config.data.datasets[0].data = []
+            
+            for(i=0;i<=Object.keys(data.timestamp).length;i++){
+                lastCandlePack = {
+                    x: data.timestamp[i],
+                    o: data.open[i].toFixed(2),
+                    h: data.high[i].toFixed(2),
+                    l: data.low[i].toFixed(2),
+                    c: data.close[i].toFixed(2)
+                }
+                myChart.config.data.datasets[0].label = data.symbol
+                myChart.config.data.datasets[0].data.push(lastCandlePack)
+                myChart.update()
+            }
+        }).catch((err) => {
+            console.log(err)
+        });
 })
-
