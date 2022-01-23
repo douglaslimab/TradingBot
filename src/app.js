@@ -1,9 +1,12 @@
-const feedDisplay = document.querySelector('#feed')
+const newsFeed = document.querySelector('#news-feed')
 const ctx = document.querySelector('#my-chart').getContext("2d")
 const inputSymbol = document.querySelector('#input-symbol')
 const inputInterval = document.querySelector('#input-interval')
 const inputRange = document.querySelector('#input-range')
 const sendBtn = document.querySelector('#send-btn')
+
+
+//  Candlestick Settings
 
 const initialCandlePack = {    x: 0, o: 0, h: 0, l: 0, c: 0 }
 
@@ -28,7 +31,13 @@ var updateMyChart = function(){
     myChart.update()
 }
 
+
+//  Api Address
+
 url = 'http://localhost:8000/b3/ticker/'
+
+
+//  Send Button
 
 sendBtn.addEventListener('click', async () => {
     urlCode = url + inputSymbol.value + '&' + inputInterval.value + '&' + inputRange.value

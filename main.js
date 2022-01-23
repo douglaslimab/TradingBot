@@ -63,4 +63,4 @@ app.get('/b3/ticker/:id&:interval&:range', (req, res) => {
     
 })
 
-app.listen(PORT, () => console.log(`Server running on the PORT ${PORT}`))
+app.listen(PORT, () => console.log(`Yahoo API Server running on the PORT ${PORT}`))
