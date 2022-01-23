@@ -4,6 +4,7 @@ const inputSymbol = document.querySelector('#input-symbol')
 const inputInterval = document.querySelector('#input-interval')
 const inputRange = document.querySelector('#input-range')
 const sendBtn = document.querySelector('#send-btn')
+const refreshBtn = document.querySelector('#refresh')
 
 
 //  Candlestick Settings
@@ -34,7 +35,8 @@ var updateMyChart = function(){
 
 //  Api Address
 
-url = 'http://localhost:8000/b3/ticker/'
+url = 'http://localhost:5000/b3/ticker/'
+news = 'http://localhost:8000/info/'
 
 
 //  Send Button
@@ -68,4 +70,27 @@ sendBtn.addEventListener('click', async () => {
         }).catch((err) => {
             console.log(err)
         });
+})
+
+refreshBtn.addEventListener('click', () => {
+    urlCode = news + inputSymbol.value
+    console.log.urlCode
+
+    return fetch(urlCode)
+    .then((result) => {
+        return result.json()
+    }).then((data) => {
+        
+    while(newsFeed.firstChild){
+        newsFeed.removeChild(newsFeed.firstChild)
+    }
+
+    data.forEach(article => {
+        const articleItem = `<div><h3>` + article.title + `</h3><p>` + article.url + `</p></div>`
+        newsFeed.insertAdjacentHTML("beforeend", articleItem)
+    })
+
+    }).catch((err) => {
+        
+    });
 })
