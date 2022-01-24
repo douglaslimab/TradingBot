@@ -86,7 +86,7 @@ refreshBtn.addEventListener('click', () => {
     }
 
     data.forEach(article => {
-        const articleItem = `<div><h3>` + article.title + `</h3><p>` + article.url + `</p></div>`
+        const articleItem = `<div><h3><a href=""${article.url}>` + article.title + `</a></h3></div>`
         newsFeed.insertAdjacentHTML("beforeend", articleItem)
     })
 

@@ -94,13 +94,45 @@ form button:hover{
 
 .news-feed{
     width: 50vh;
-    height: 60vh;
+    height: 50vh;
+
+    overflow: hidden;
+    
+    padding: 1rem;
 
     border-radius: 10px;
 
+    color: #888;
     background-color: #fff;
 }
 
+h3{
+    margin: 1rem 0;
+}
+a{
+    text-decoration: none;
+    color: #888;
+}
+
+a:hover{
+    color: #555;
+}
+
+
 .refresh{
     width: 10rem;
+}
+
+.news-header{
+    height: 10vh;
+
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.6rem;
+    border-radius: 10px;
+    color: #3a3;
+    background-color: #ccc;
 }
