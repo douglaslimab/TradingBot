@@ -10,12 +10,12 @@ Development of a web application to run a finnacial dashboard displaying a Candl
     
   -> Backend
     Node.js,
-    Express.js
-    Axios
-    Cheerio
+    Express.js,
+    Axios,
+    Cheerio,
     
   -> Database
     *
     
   -> APIs
-    Yahoo API;
+    Yahoo API,
