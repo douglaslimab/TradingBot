@@ -96,7 +96,7 @@ form button:hover{
     width: 50vh;
     height: 50vh;
 
-    overflow: hidden;
+    overflow: scroll;
     
     padding: 1rem;
 
